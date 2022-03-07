@@ -1,8 +1,13 @@
 export const state = () => ({
-    category : "",
+    category : undefined,
 })
 export const mutations = {
     setCategory(state, value){
-        state.category = value;
+        if(value == state.category) {
+            // toggle
+            state.category = undefined
+        } else {
+            state.category = value;
+        }
     }
 }

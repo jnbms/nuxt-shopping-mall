@@ -1,7 +1,5 @@
 <template>
-  <div>
-      hello goods
-  </div>
+    <Nuxt/>
 </template>
 
 <script>

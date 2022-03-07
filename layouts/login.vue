@@ -1,6 +1,8 @@
 <template>
     <div class="center"><Nuxt/></div>
+    
 </template>
+
 <style scoped>
     .center{
         height: 100vh;
@@ -9,6 +11,6 @@
         place-items: center;
         /* background-color: rgb(255, 244, 253); */
         background-color: rgb(250, 250, 250);
-
     }
+    
 </style>

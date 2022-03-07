@@ -1,26 +1,18 @@
 <template>
     <div class="flex-container">
         <!-- <div>|</div> -->
-        <NuxtLink to="/ranks" class="scroll-down">
-            <div>
-                <div>랭킹</div>
-                <!-- <div>
-                    <div>옷</div>
-                    <div>바지</div>
-                    <div>팬티</div>
-                </div> -->
-            </div>
-        </NuxtLink>
+        <div class="scroll-down">
+            <div>랭킹</div>
+        </div>
         <div>|</div>
-        <NuxtLink to="/news">신상품</NuxtLink>
+        <!-- <NuxtLink to="/news">신상품</NuxtLink> -->
+        <!-- <div>|</div> -->
+        <NuxtLink to="/"><div @click="redirect">상의/T-Shirts</div></NuxtLink>
         <div>|</div>
-        <NuxtLink to="/event">이벤트</NuxtLink>
+        <NuxtLink to="/pants">하의/Pants</NuxtLink>
         <div>|</div>
-        <NuxtLink to="/best">인기 상품</NuxtLink>
-        <div>|</div>
-        <NuxtLink to="/sail">세일</NuxtLink>
-        <div>|</div>
-        <NuxtLink to="/about">온라인 주문</NuxtLink>
+        <div>세일/이벤트</div>
+
         <!-- <div>|</div> -->
     </div>
 </template>
@@ -58,9 +50,14 @@
     }
 </style>
 
-<script lang="ts">
-import Vue from 'vue';
-export default ({
-    name: "Navi"   
-})
+<script>
+import {mapMutations} from 'vuex'
+export default {
+    methods: {
+        ...mapMutations({'setCategory': 'category/setCategory'}),
+        redirect() {
+            this.setCategory(undefined)
+        }
+    }
+}
 </script>

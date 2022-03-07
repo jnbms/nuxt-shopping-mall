@@ -10,7 +10,18 @@
         border: 1px solid lightgray;
         border-style: none;
         &:hover{
+            cursor: pointer;
             background-color: rgb(247, 247, 247);
+        }
+        &.primary{
+            color: white;
+            background-color: rebeccapurple;
+            /* height: 4em; */
+        }
+        &.secondary{
+            border: 1px solid rebeccapurple;
+            color: rebeccapurple;
+            background-color: white;
         }
         /* height: 4em; */
         
@@ -24,6 +35,6 @@ export default {
         style(){
             return "background-color:" + this.color;
         }
-    }
+    },
 }
 </script>

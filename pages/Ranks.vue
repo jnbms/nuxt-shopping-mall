@@ -13,7 +13,7 @@
                 월별 랭킹
                 연간 랭킹
             </div>
-             <div class="sidebar">
+            <div class="sidebar">
                 <div>
                     <div>품목</div>
                     <div>브랜드</div>

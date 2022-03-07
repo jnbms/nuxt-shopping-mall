@@ -11,6 +11,7 @@
     "esModuleInterop": true,
     "allowJs": true,
     "sourceMap": true,
+    "noImplicitAny": false,
     "strict": true,
     "noEmit": true,
     "experimentalDecorators": true,
@@ -25,7 +26,9 @@
     },
     "types": [
       "@nuxt/types",
-      "@types/node"
+      "@types/node",
+      "@nuxtjs/axios",
+      "@nuxtjs/auth-next"
     ]
   },
   "exclude": [

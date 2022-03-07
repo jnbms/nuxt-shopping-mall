@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+    <div class="container">
     <div class="login-box">
         <nuxt-link to="/" class="title">신상마켓</nuxt-link>
         <div>아이디</div>
@@ -7,18 +7,21 @@
         <div>비밀번호</div>
         <input placeholder="PW"/>
         <button class="button">로그인</button>
-        <button class="button google">구글 로그인</button>
-        <p>아이디 찾기 | 비밀번호 찾기</p>
-        <p style="text-decoration: underline; color: blue;">회원가입</p>
-    </div>
+        <!-- <button class="button" @click="google">구글s 로그인</button> -->
+        <auth-button strategy="google" color="white" backgroundColor="#4C8BF5">구글 로그인</auth-button>
+        <auth-button strategy="naver" color="white" backgroundColor="#19CE60">네이버 로그인</auth-button>
+        <auth-button strategy="kakao" color="white" backgroundColor="#F9E000">카카오 로그인</auth-button>
 
-  </div>
+        <p>아이디 찾기 | 비밀번호 찾기</p>
+    </div>
+    </div>
 </template>
 
 <script>
+import AuthButton from '~/components/AuthButton.vue'
 import Button from '~/components/Button.vue'
 export default {
-  components: { Button },
+    components: { Button, AuthButton },
     layout: "login"
 }
 </script>
@@ -26,6 +29,9 @@ export default {
 <style lang="scss" scoped>
     .container{
         background-color: white;
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* align-items: center; */
         .button{
             background-color: transparent;
             border: 1px solid darkgray;
@@ -35,6 +41,7 @@ export default {
             color: white;
             /* color: red; */
             &.google{
+                /* width: 100%; */
                 background: transparent;
                 border: 1px solid rebeccapurple;
                 color: rebeccapurple;
@@ -78,6 +85,5 @@ export default {
                 /* align-self: flex-start; */
             }
         }
-        
     }
 </style>

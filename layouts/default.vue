@@ -7,6 +7,7 @@
         </div>
     </div>
 </template>
+
 <style lang="scss" scoped>
     .template{
         display: flex;

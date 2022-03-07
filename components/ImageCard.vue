@@ -1,12 +1,12 @@
 <template>
   <nuxt-link :to="`/goods/${id}`">
     <div class="card column">
-      <img :src="image"/>
+      <img :src="`http://localhost:3001/images/clothes/${sort}/${name}.jpg`"/>
       <div class="content">
           <div class="textbox">
-            <h2>{{product}}</h2>
-            <div>{{discription}}</div>
-            <p>{{price}}</p>
+            <h2>{{name}}</h2>
+            <!-- <div>{{discription}}</div> -->
+            <p>{{price}} 원</p>
           </div>
       </div>
     </div>
@@ -15,7 +15,7 @@
 
 <script>
 export default {
- props: ["id","image","product","discription","price"]
+  props: ["id","name","discription","price","sort"]
 }
 </script>
 
@@ -50,7 +50,10 @@ export default {
           text-align: right;
           /* border: 1px solid red; */
           padding-right: 1em;
-          padding-bottom: 0.5em;
+          padding-bottom: 2em;
+          h2, p {
+            margin: 0;
+          }
         }
       }
     }

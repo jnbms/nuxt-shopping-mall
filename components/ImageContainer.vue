@@ -1,10 +1,12 @@
 <template>
     <div class="wrap">
-        <div class="image-container">
-            <div v-for="list in lists" :key="list.id">
+        <!-- v-if : when mylist is undefined, its not showing, you can remove first rendering error  -->
+        <div class="image-container" v-if="myList">
+            <div v-for="list in pleaseList" :key='list.key'>
                 <image-card
-                    :id="list.id" :image="list.image" :product="list.product"
-                    :discription="list.discription" :price="list.price"/>
+                    :sort="sort"
+                    :id="list._id" :name="list.name" :price="list.price"
+                    :discription="list.discription" />
             </div>
         </div>
     </div>
@@ -39,13 +41,38 @@
 </style>
 
 <script>
-import {mapState} from "vuex"
+import {mapState, mapGetters} from "vuex"
 import ImageCard from './ImageCard.vue'
 export default {
     components: { ImageCard },
     name:"ImageContainer",
-    computed: mapState({
-        lists : state => state.products.list
-    })
+    props : ["sort"],
+    data(){
+        return{
+            myList : undefined
+        }
+    },
+    async fetch(){
+        // data보다 순서가 느리기 때문에 초기 렌더링에서 에러가 발생한다.
+        let contents
+        await this.$axios.get('/api' + '/clothes/' + this.sort).then(result => contents = result.data)
+        this.myList = contents
+    },
+
+    computed : {
+        // ...mapGetters({
+        //     top: 'products/top',
+        //     bottom: "products/bottom",
+        // }),
+        pleaseList(){
+            return this.$store.state.category.category == undefined ?
+                this.myList :
+                this.myList.filter(list => list.category == this.$store.state.category.category) 
+        }
+    },
+    mounted(){
+    },
+    methods: {
+    }
 }
 </script>

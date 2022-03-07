@@ -1,27 +1,25 @@
 <template>
     <div class="container">
         <Banner/>
-        <Cartegory :categories="categories"/>
-        <ImageContainer sort="top"/>
-        <!-- <Mid/> -->
+        <!-- <Cartegory :categories="categories"/> -->
+        <ImageContainer sort="bottom"/>
+        <Mid/>
     </div>
 </template>
 
 <script>
+import Vue from 'vue'
 import Cartegory from '../components/Cartegory.vue'
 import ImageContainer from "~/components/ImageContainer.vue"
 import Mid from '../components/Mid.vue'
 import Navi from '../components/Navi.vue'
-import Button from '~/components/Button.vue'
 import {mapMutations} from 'vuex'
+export default Vue.extend({
+    components: {Navi, Cartegory, ImageContainer, Mid},
 
-export default {
-    components: {Navi, Cartegory, ImageContainer, Mid, Button},
-    name:"IndexPage",
-    
     data() {
         return {
-            categories : ["티셔츠","원피스","추리닝","자켓"],
+            categories : ["청바지","블랙진","가죽바지","치마"]
         }
     },
     methods: {
@@ -30,8 +28,7 @@ export default {
     mounted(){
         this.setCategory(undefined)
     },
-
-}
+})
 </script>
 
 <style lang="scss" scoped>
@@ -45,4 +42,3 @@ export default {
     
     
 </style>
-

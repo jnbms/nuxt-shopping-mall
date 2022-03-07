@@ -51,6 +51,7 @@
 </script>
 
 <style lang="scss" scoped>
+
 .slide-action{
     left: -100px;
 }

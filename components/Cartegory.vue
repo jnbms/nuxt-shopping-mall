@@ -1,24 +1,22 @@
 <template>
-  <div class="body">
-     <div class="title">카테고리</div>
+<div class="body">
+    <div class="title">카테고리</div>
         <div class="container" >
-            <div class="container-list" v-for="list in Categorylist" :key="list.id" @click="selectCategory">
-                <div :class="{strong : list == category}">#{{list}}</div>
+            <div class="container-list" v-for="list in categories" :key="list.id" >
+                #<span :class="{strong : list == category}" @click="selectCategory">{{list}}</span>
             </div>
         </div>
-  </div>
+</div>
 </template>
 
 <script>
 import {mapState} from "vuex"
 export default {
+    props: 
+        ["categories"]
+        ,
     mounted(){
-        this.$store.commit("category/setCategory",this.Categorylist[0])
-    },
-    data(){
-        return{
-            Categorylist:["티셔츠","원피스","추리닝","자켓"]
-        }
+        // this.$store.commit("category/setCategory",this.categories[0])
     },
     computed:{
         ...mapState({
@@ -36,6 +34,7 @@ export default {
 <style lang="scss" scoped>
     .strong{
         font-weight: bold;
+        text-decoration: underline;
     }
     .body{
         width: 100%;
@@ -61,7 +60,7 @@ export default {
         width: 80%;
         
         .container-list:hover{
-          text-decoration: underline;
+            text-decoration: underline;
         }
     }
 </style>
