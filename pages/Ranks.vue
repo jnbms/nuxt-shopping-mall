@@ -5,7 +5,6 @@
                 <div>
                     <div>CSS의 FLEX 말고</div>
                     <div>제대로 FLEX 해보자!</div>
-                    <nuxt-link to="/sail" class="aggro">세일 바로가기</nuxt-link>
                 </div>
             </div>
             <div class="sidebar column">
