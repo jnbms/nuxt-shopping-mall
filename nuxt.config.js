@@ -1,10 +1,9 @@
 export default {
-  // target: 'static',
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: '신상마켓',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ko'
     },
     meta: [
       { charset: 'utf-8' },
