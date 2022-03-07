@@ -4,7 +4,7 @@ export default {
   head: {
     title: '신상마켓',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ko'
     },
     meta: [
       { charset: 'utf-8' },
@@ -101,5 +101,6 @@ export default {
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    buildDir: 'nuxt-dist'
   }
 }
