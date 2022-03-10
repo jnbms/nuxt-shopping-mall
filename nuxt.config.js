@@ -1,5 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  target: 'server',
   head: {
     title: '신상마켓',
     htmlAttrs: {
@@ -22,7 +23,7 @@ export default {
   // axios: {},
   proxy: {
     '/api/' : {
-      target: 'http://localhost:3001',
+      target: 'https://clotheapi123.herokuapp.com/',
       pathRewrite: {'^/api/': ''}
     }
   },
