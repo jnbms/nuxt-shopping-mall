@@ -18,11 +18,5 @@
         "Service-Worker-Allowed": "/"
         }
     }
-    ],
-    "rewrites": [
-        {
-            "source": "/api/:match*",
-            "destination": "https://clotheapi123.herokuapp.com/:match*"
-        }
     ]
 }
