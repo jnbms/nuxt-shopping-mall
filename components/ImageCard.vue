@@ -1,7 +1,7 @@
 <template>
   <nuxt-link :to="`/goods/${id}`">
     <div class="card column">
-      <img :src="`http://localhost:3001/images/clothes/${sort}/${name}.jpg`"/>
+      <img :src="`${baseUrl}/images/clothes/${sort}/${name}.jpg`"/>
       <div class="content">
           <div class="textbox">
             <h2>{{name}}</h2>
@@ -15,7 +15,12 @@
 
 <script>
 export default {
-  props: ["id","name","discription","price","sort"]
+  props: ["id","name","discription","price","sort"],
+  data() {
+    return {
+      baseUrl : process.env.baseUrl
+    }
+  }
 }
 </script>
 

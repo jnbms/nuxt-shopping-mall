@@ -27,6 +27,10 @@ export default {
       pathRewrite: {'^/api/': ''}
     }
   },
+  env: {
+    baseUrl: 'https://clotheapi123.herokuapp.com'
+    // baseUrl: 'http://localhost:5000'
+  },
   image: {
     // server rendering 에서 /_ipx/가 앞에 붙는 문제가 발생
     // domains: [

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
       <div  class="column width-50">
-        <img v-if="product" width="100%" :src="`http://localhost:3001/images/clothes/${product.sort}/${product.name}.jpg`"/>
+        <img v-if="product" width="100%" :src="`${baseUrl}/images/clothes/${product.sort}/${product.name}.jpg`"/>
       </div>
       <div class="column width-50 info-box">
         <div v-if="product" class="padding">
@@ -43,6 +43,11 @@ export default {
     // computed: mapState({
     //   product : state => state.product.product
     // }),
+    data(){
+      return {
+        baseUrl: process.env.baseUrl
+      }
+    },
     methods: {
     ...mapMutations({'addItem': 'acount/addItem', 'setProduct': 'product/setProduct'}),
     addToCart() {
