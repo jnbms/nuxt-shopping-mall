@@ -12,14 +12,8 @@
     "routes": [],
     "rewrites": [
         {
-            "source": "/:path*",
-            "has": [
-            {
-                "type": "host",
-                "value": "app.acme.com"
-            }
-            ],
-            "destination": "/app/:path*"
+            "source": "/api/:path*",
+            "destination": "https://clotheapi123.herokuapp.com/:path*"
         }
     ]
 }
