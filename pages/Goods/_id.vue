@@ -22,11 +22,11 @@ export default {
     const id = params.id;
     
     let product
-    await $axios.get(process.env.BaseUrl + '/clothes?id=' + id)
+    await $axios.get(process.env.baseUrl + '/clothes?id=' + id)
     .then(result => {
       product = result.data
     })
-    await $axios.post(process.env.BaseUrl + '/clothes/viewCount?id=' + id)
+    await $axios.post(process.env.baseUrl + '/clothes/viewCount?id=' + id)
   
     return {
       product
