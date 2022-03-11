@@ -55,7 +55,7 @@ export default {
     async fetch(){
         // data보다 순서가 느리기 때문에 초기 렌더링에서 에러가 발생한다.
         let contents
-        await this.$axios.get('/api' + '/clothes/' + this.sort).then(result => contents = result.data)
+        await this.$axios.get(process.env.baseUrl + '/clothes/' + this.sort).then(result => contents = result.data)
         this.myList = contents
     },
 
