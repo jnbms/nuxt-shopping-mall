@@ -9,7 +9,7 @@
         }
     }
     ],
-  "rewrites": [
+    "rewrites": [
         {
             "source": "/api/:path*",
             "destination": "https://clotheapi123.herokuapp.com/:path*"
