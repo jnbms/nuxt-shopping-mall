@@ -49,7 +49,7 @@ export default {
     // },
     data(){
         return{
-            coments: this.$axios.get('/api' + '/board/' + this.product._id).then(result => this.coments = result.data),
+            coments: this.$axios.get(process.env.baseUrl + '/board/' + this.product._id).then(result => this.coments = result.data),
             review: "",
             rating: 0
         }
@@ -78,15 +78,15 @@ export default {
             return format
         },
         async submit() {    
-            await this.$axios.post('/api' + '/board/' + this.product._id, {"ratio" : this.rating, "content": this.review})
+            await this.$axios.post(process.env.baseUrl + '/board/' + this.product._id, {"ratio" : this.rating, "content": this.review})
             this.rerenderComents()
         },
         async deleteContent(id) {
-            await this.$axios.delete('/api/board/' + id)
+            await this.$axios.delete(process.env.baseUrl + '/board/' + id)
             this.rerenderComents()
         },
         rerenderComents() {
-            this.components = this.$axios.get('/api' + '/board/' + this.product._id).then(result => this.coments = result.data)
+            this.components = this.$axios.get(process.env.baseUrl + '/board/' + this.product._id).then(result => this.coments = result.data)
         }
     }
 }   
