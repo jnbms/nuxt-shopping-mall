@@ -25,7 +25,7 @@ export default {
             })
             .catch(err => console.error(err))
             .finally(function(){
-                window.close()
+                // window.close()
             })
         // this.$store.commit('acount/setUser', 'asd')
         // console.log(this.$store.state.acount)
