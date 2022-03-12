@@ -20,7 +20,8 @@ export default {
                 // 여기서 스토어를 쓰는 게 아니라, 스토어가 백엔드와 연결된 후,
                 window.opener.sessionStorage.setItem("username", result.data.username)
                 // this.$store.commit('acount/setUser', name)
-                window.opener.location.href = '/' // redirect to home
+                console.log(result)
+                // window.opener.location.href = '/' // redirect to home
             })
             .catch(err => console.error(err))
             .finally(function(){
