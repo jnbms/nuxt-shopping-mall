@@ -70,7 +70,7 @@ export default {
         clientId: '270485046976-4ae3aunmmig2u21qje2c03l5n08s0qia.apps.googleusercontent.com',
         codeChallengeMethod: '',
         responseType: 'code',
-        redirectUri: 'http://localhost:3000/auth/google/redirect',
+        redirectUri: 'https://clotheapi123.herokuapp.com/auth/google/redirect',
         // redirectUri: 'http://localhost:3001/auth/google/callback',
         grantType: 'authorization_code',
         // endpoints: {
@@ -88,7 +88,7 @@ export default {
         responseType: 'code',
         codeChallengeMethod: '',
         clientId: "ZN9LJvJmBVxXuMVU8muB",
-        redirectUri: "http://localhost:3000/auth/naver/redirect"
+        redirectUri: "https://clotheapi123.herokuapp.com/auth/naver/redirect"
       },
       kakao: {
         scheme: 'oauth2',
@@ -99,7 +99,7 @@ export default {
         responseType: 'code',
         codeChallengeMethod: '',
         clientId: "3b7294b134903d00567d453cc7974cd3",
-        redirectUri: "http://localhost:3000/auth/kakao/redirect"
+        redirectUri: "https://clotheapi123.herokuapp.com/auth/kakao/redirect"
       }
     }
   },
