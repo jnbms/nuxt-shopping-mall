@@ -15,7 +15,7 @@ export default {
         // 와 연결해서 다시 보낸다. 받은 결과가 성공일 경우 이 페이지는 팝업으로 열어둔 상태이므로
         // 윈도우를 끈다.(이 작업은 1회만 동작하고 F5 새로고침 시 작동하지 않는다.)
         // 바로 백엔드로 콜백할 경우 구글쪽 로그인이라 접근하는 방법을 모르겠어서 한번 거쳤다.
-        this.$axios.get(process.env.baseUrl + 'auth/'+ strategy +'/callback' + query)
+        this.$axios.get(process.env.baseUrl + '/auth/'+ strategy +'/callback' + query)
             .then( result => {  
                 // 여기서 스토어를 쓰는 게 아니라, 스토어가 백엔드와 연결된 후,
                 window.opener.sessionStorage.setItem("username", result.data.username)
