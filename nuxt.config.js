@@ -34,7 +34,7 @@ export default {
   image: {
     // server rendering 에서 /_ipx/가 앞에 붙는 문제가 발생
     domains: [
-      'https://nuxt-ecommerce-web.vercel.app/'
+      'https://nuxt-ecommerce-web.vercel.app'
     ]
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
