@@ -33,9 +33,9 @@ export default {
   },
   image: {
     // server rendering 에서 /_ipx/가 앞에 붙는 문제가 발생
-    // domains: [
-    //   'http://localhost:3001/images/clothes'
-    // ]
+    domains: [
+      'https://nuxt-ecommerce-web.vercel.app/'
+    ]
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -88,7 +88,8 @@ export default {
         responseType: 'code',
         codeChallengeMethod: '',
         clientId: "ZN9LJvJmBVxXuMVU8muB",
-        redirectUri: "https://clotheapi123.herokuapp.com/auth/naver/redirect"
+        // naver have to write www.
+        redirectUri: "https://www.clotheapi123.herokuapp.com/auth/naver/redirect"
       },
       kakao: {
         scheme: 'oauth2',
