@@ -20,12 +20,11 @@ export default {
                 // 여기서 스토어를 쓰는 게 아니라, 스토어가 백엔드와 연결된 후,
                 window.opener.sessionStorage.setItem("username", result.data.username)
                 // this.$store.commit('acount/setUser', name)
-                console.log(result)
-                // window.opener.location.href = '/' // redirect to home
+                window.opener.location.href = '/' // redirect to home
             })
             .catch(err => console.error(err))
             .finally(function(){
-                // window.close()
+                window.close()
             })
         // this.$store.commit('acount/setUser', 'asd')
         // console.log(this.$store.state.acount)
