@@ -4,51 +4,45 @@
         <h2>Related products</h2>
         <p>연관된 상품</p>
     </div>
-    <div class="row image-container">
-        
-        <div class="image-card">
-            <nuxt-img class="image" src="/fashion-model01.jpg"/>
+    <div class="image-container">
+        <div v-for="product in recommandProducts" :key="product._id" class="image-card">
+            <img class="image" :src="`${baseUrl}/images/clothes/${product.sort}/${product.name}.jpg`"/>
             <div class="textbox">
-            <h2 style="margin: 0;">패션 이름</h2>
-            <div>32800원</div>
+            <h2 style="margin: 0;">{{product.name}}</h2>
+            <div>{{product.price}} 원</div>
             </div>
         </div>
-        
-        <div class="image-card">
-            <nuxt-img
-                class="image" 
-                src="fashion-model02.jpg"
-                provider="static"
-                />
-            <div class="textbox">
-            <h2 style="margin: 0;">패션 이름</h2>
-            <div>32800원</div>
-            </div>
-        </div>
-
-        <div class="image-card">
-            <nuxt-img class="image" src="fashion-model03.jpg"/>
-            <div class="textbox">
-            <h2 style="margin: 0;">패션 이름</h2>
-            <div>32800원</div>
-            </div>
-        </div>
-
-        <div class="image-card">
-            <nuxt-img class="image" src="fashion-model04.jpg"/>
-            <div class="textbox">
-            <h2 style="margin: 0;">패션 이름</h2>
-            <div>32800원</div>
-            </div>
-        </div>
-
     </div>
 </div>
 </template>
 
 <script>
 export default {
-
+    props : ["product"],
+    data() {
+        return {
+            recommandProducts: [],
+            baseUrl: process.env.baseUrl
+        }
+    },
+    async fetch() {
+        // const {sort, category, _id} = this.product
+        let data
+        await this.$axios.get(process.env.baseUrl + '/' + 'clothes' + '/' +  this.product.sort)
+            .then(result => data = result.data)
+            data = data.filter(product => product._id !== this.product._id)
+            let nums = []
+            Array.from({length: 4}, (_, i) => {
+                var num
+                do {
+                    num = Math.floor(Math.random() * data.length)
+                } while(nums.some(eletment => eletment == num))
+                nums.push(num)
+            })
+            nums.map(num => this.recommandProducts.push(data[num]))
+    },
+    mounted() {
+    }
 }
 </script>
 
