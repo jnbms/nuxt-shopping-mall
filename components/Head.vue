@@ -87,6 +87,7 @@
         .title{
             font-size: 1.5em;
             min-width: 10vh;
+            padding-inline: 4em;
             color: rebeccapurple;
         }
         input{
