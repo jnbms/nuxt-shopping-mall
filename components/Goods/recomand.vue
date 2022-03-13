@@ -1,21 +1,25 @@
 <template>
-  <div class="column container">
-      <div class="section">
+<div class="column container">
+    <div class="section">
         <h2>Related products</h2>
         <p>연관된 상품</p>
-      </div>
-      <div class="row image-container">
-          
+    </div>
+    <div class="row image-container">
+        
         <div class="image-card">
-            <nuxt-img class="image" src="fashion-model01.jpg"/>
+            <nuxt-img class="image" src="/fashion-model01.jpg"/>
             <div class="textbox">
             <h2 style="margin: 0;">패션 이름</h2>
             <div>32800원</div>
             </div>
         </div>
-          
+        
         <div class="image-card">
-            <nuxt-img class="image" src="fashion-model02.jpg"/>
+            <nuxt-img
+                class="image" 
+                src="fashion-model02.jpg"
+                provider="static"
+                />
             <div class="textbox">
             <h2 style="margin: 0;">패션 이름</h2>
             <div>32800원</div>
@@ -38,8 +42,8 @@
             </div>
         </div>
 
-      </div>
-  </div>
+    </div>
+</div>
 </template>
 
 <script>

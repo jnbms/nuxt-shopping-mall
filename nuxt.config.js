@@ -31,12 +31,6 @@ export default {
     baseUrl: 'https://clotheapi123.herokuapp.com'
     // baseUrl: 'http://localhost:5000'
   },
-  image: {
-    // server rendering 에서 /_ipx/가 앞에 붙는 문제가 발생
-    domains: [
-      'https://nuxt-ecommerce-web.vercel.app'
-    ]
-  },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     // {src: '~/plugins/vue-google-oauth2', ssr: false}
