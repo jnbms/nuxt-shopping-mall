@@ -86,7 +86,7 @@
         align-items: center;
         .title{
             font-size: 1.5em;
-            min-width: 10vh;
+            min-width: 12vh;
             padding-inline: 4em;
             color: rebeccapurple;
         }

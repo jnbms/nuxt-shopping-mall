@@ -17,7 +17,7 @@
             <tbody>
                 <tr v-for="item in list" :key="item.key">
                     <td>
-                        <nuxt-img class="image" :src="`${baseURL}/${item.sort}/${item.name}.jpg`" width="200px" height="250px"/>
+                        <nuxt-img class="image" :src="`${baseUrl}/images/clothes/${item.sort}/${item.name}.jpg`" width="200px" height="250px"/>
                     </td>
                     <td>
                         <div class="brand">{{item.brand}}</div>
@@ -65,7 +65,7 @@ export default {
     data(){
         return {
             list : this.$store.state.acount.cart,
-            baseURL : 'http://localhost:3001/images/clothes'
+            baseUrl : process.env.baseUrl 
         }
     },
     computed : {
