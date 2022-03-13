@@ -71,7 +71,8 @@ export default {
             let day = Number(date[0])
             date = date[1].split(':') 
             // 백엔드에서 시간 문제를 해결하지 못해서 임시 방편으로, 여기에 적기보다 한번 필터링해서 적용하는 편이 좋겠다.
-            let hour = (date[0] > 12 ? date[0] - 12 : date[0]) + 9
+            let hour = (date[0] > 12 ? date[0] - 12 : date[0])
+            // + 9
             let minute = date[1]
 
             let format = month + "월 " + day + "일 " + hour + "시 " + minute + "분"
