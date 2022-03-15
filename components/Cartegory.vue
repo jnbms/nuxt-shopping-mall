@@ -3,7 +3,7 @@
     <div class="title">카테고리</div>
         <div class="container" >
             <div class="container-list" v-for="list in categories" :key="list.id" >
-                #<span :class="{strong : list == category}" @click="selectCategory">{{list}}</span>
+                #<span class="span" :class="{strong : list == category}" @click="selectCategory">{{list}}</span>
             </div>
         </div>
 </div>
@@ -32,6 +32,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .span {
+        white-space: nowrap;
+    }
     .strong{
         font-weight: bold;
         text-decoration: underline;
