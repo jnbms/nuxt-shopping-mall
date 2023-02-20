@@ -28,8 +28,8 @@ export default {
     }
   },
   env: {
-    baseUrl: 'https://clotheapi123.herokuapp.com'
-    // baseUrl: 'http://localhost:5000'
+    // baseUrl: 'https://clotheapi123.herokuapp.com'
+    baseUrl: 'http://localhost:5000'
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
